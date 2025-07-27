@@ -54,7 +54,7 @@ DATABASES = {
         'NAME': 'mydb',
         'USER': 'N01683837W25',
         'PASSWORD': 'Toronto@2024',
-        'HOST': 'localhost',
+        'HOST': 'mysql',
         'PORT': '3306',
     }
 }
