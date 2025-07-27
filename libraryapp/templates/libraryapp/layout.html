@@ -1,0 +1,28 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library System</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'dashboard' %}">Dashboard</a> |
+        <a href="{% url 'books' %}">Books</a> |
+        <a href="{% url 'reservations' %}">Transactions</a> |
+        <a href="{% url 'admin_books' %}">Admin</a> |
+        <a href="{% url 'login' %}">Logout</a>
+    </nav>
+    <hr>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li style="color:green;">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% block content %}{% endblock %}
+</body>
+</html>

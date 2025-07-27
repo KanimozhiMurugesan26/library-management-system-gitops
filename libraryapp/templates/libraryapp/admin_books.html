@@ -1,0 +1,63 @@
+{% extends 'libraryapp/layout.html' %}
+{% block content %}
+<div class="container">
+    <h2>Admin - Manage Books</h2>
+    <form method="post">{% csrf_token %}
+        <input type="hidden" name="book_id" placeholder="Book ID (edit/delete)">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="author" placeholder="Author">
+        <input type="text" name="genre" placeholder="Genre">
+        <input type="number" name="availability" placeholder="Availability (1/2)">
+        <select name="category_id" required>
+            <option value="">-- Select Category --</option>
+            {% for category in categories %}
+                <option value="{{ category.0 }}">{{ category.1 }}</option>
+            {% endfor %}
+        </select>
+            <div class="admin-buttons">
+
+        <button type="submit" name="add">Add</button>
+                <p></p>
+        <button type="submit" name="edit">Edit</button>
+                <p></p>
+        <button type="submit" name="delete">Delete</button>
+                <p></p>
+            </div>
+
+    </form>
+
+    <div class="table-wrapper">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.0 }}</td>
+                <td>{{ book.1 }}</td>
+                <td>{{ book.2 }}</td>
+                <td>{{ book.3 }}</td>
+                <td>
+                    {% if book.4 == 1 %}
+                        <span class="available">Available</span>
+                    {% elif book.4 == 2 %}
+                        <span class="borrowed">Borrowed</span>
+                    {% else %}
+                        <span class="unknown">Unknown</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</div>
+{% endblock %}

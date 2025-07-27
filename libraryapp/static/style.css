@@ -1,0 +1,199 @@
+/* ====== GLOBAL STYLES ====== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('../static/library.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ====== NAVIGATION BAR ====== */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: white;
+    font-size: 16px;
+}
+
+/* ====== CONTAINERS ====== */
+.container {
+    background-color: rgba(255, 255, 255, 0.92);
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ====== FORM ELEMENTS ====== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Admin Buttons */
+.admin-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* ====== TABLE STYLING (UNIVERSAL ENHANCED STYLE) ====== */
+.table-wrapper {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+    background-color: #fff;
+    border: 2px solid #333; /* Bold outer border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #333; /* Inner cell borders */
+    padding: 14px 18px;
+    text-align: left;
+    color: #111;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* ====== LINK BUTTONS ====== */
+.button-link {
+    padding: 8px 12px;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #007bff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+}
+
+/* ====== AUTH PAGES: LOGIN + REGISTER ====== */
+.auth-box {
+    background-color: rgba(255, 255, 255, 0.92);
+    width: 400px;
+    margin: 100px auto;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.auth-box input {
+    margin-bottom: 15px;
+}
+
+.auth-box button {
+    margin-top: 10px;
+}
+
+.link-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.button-link.secondary {
+    background: none;
+    color: #007bff;
+    border: none;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.button-link.secondary:hover {
+    text-decoration: underline;
+}
+
+/* ====== RESPONSIVE ====== */
+@media screen and (max-width: 600px) {
+    .container,
+    .auth-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}

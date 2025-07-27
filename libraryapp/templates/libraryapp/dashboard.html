@@ -1,0 +1,20 @@
+{% extends 'libraryapp/layout.html' %}
+{% block content %}
+<div class="container">
+    <h2>Your Borrowed Books</h2>
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>Title</th><th>Borrow Date</th><th>Return</th>
+            </tr>
+            {% for book in borrowed_books %}
+            <tr>
+                <td>{{ book.0 }}</td>
+                <td>{{ book.1 }}</td>
+                <td><a href="{% url 'return_book' %}?book_id={{ book.3 }}" class="button-link">Return</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
