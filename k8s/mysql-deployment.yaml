@@ -27,3 +27,9 @@ spec:
               value: Toronto@2024
             - name: MYSQL_ROOT_PASSWORD
               value: rootpassword
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-storage
+          emptyDir: {}
