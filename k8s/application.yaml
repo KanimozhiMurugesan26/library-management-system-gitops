@@ -13,5 +13,5 @@ spec:
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
-        prune: true            # delete any resources removed from Git
-        selfHeal: true         # revert out‑of‑band changes
+        prune: true            
+        selfHeal: true       
